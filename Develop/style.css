@@ -3,7 +3,9 @@ body {
   font-size: 16px;
   line-height: 1;
 }
-
+p{
+  color: black
+}
 textarea{
   background: transparent;
   border: none;
@@ -28,6 +30,7 @@ textarea{
   border-bottom: 1px solid black;
   padding-top: 20px;
   padding-bottom: 20px;
+  
 
 }
 
@@ -49,7 +52,6 @@ textarea{
   border-top: 1px dashed #000000;
   float: right;
   padding: 20px;
-  
 
 }
 
