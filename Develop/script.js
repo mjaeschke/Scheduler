@@ -1,73 +1,9 @@
-var todoInput = document.querySelector("#currentHour");
-var time = $("#buisnessHours");
-var today = new Date();
-var day = today.getDay();
-var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
-console.log("today is: " + daylist[day]);
-var hour = today.getHours();
 
-buisnessHours();
-// creats the minutes with a leading 0
-function minutesWithZeros(minutes) 
-{ 
-  return (minutes.getMinutes() < 10 ? '0' : '') + minutes.getMinutes();
-}
-var minutes = today.getMinutes();
-// creats the date function
-function date(){
-var prepand = (hour >= 12)? " PM ":" AM ";
-hour = (hour >= 12)? hour - 12: hour;
-
-if (hour===0 && prepand===' PM ') 
-{ 
- if (minute===0 && second===0)
-{ 
-hour=12;
-prepand=' Noon';
-} else
-{ 
-hour=12;
-prepand=' PM';
-} 
-} 
-if (hour===0 && prepand===' AM ') { 
-if (minute===0)
-{ 
-hour=12;
-prepand=' Midnight';
-} else{ 
-hour=12;
-prepand=' AM';
-} 
-}
-var dateTime = daylist[day] + " " + hour + ":" + minutes + " " + prepand;
- return dateTime;
-}
-console.log("today is: " + date());
-//<p id="currentDay" class="lead"></p>
 var dates = $("#currentDay");
-var currentDay = date();
-var cdElm = $("<p>").text("today is: " + currentDay);
+var formatedDate = moment().format('MMMM Do YYYY, h:mm a');
+var cdElm = $("<p>").text("today is: " + formatedDate);
 dates.append(cdElm);
 
-
-
-function buisnessHours(){
-if(time !== currentDay && time < currentDay){
-var Hours = $("#currentHour").addClass("past");
-var hoursElm = $("<p>").text("current time");
-Hours.append(hoursElm);
-}else if (time !== currentDay && time > currentDay ){
-var Hours = $("#currentHour").addClass("future");
-var hoursElm = $("<p>").text("current time");
-Hours.append(hoursElm);
-}else{
-var Hours = $("#currentHour").addClass("present");
-var hoursElm = $("<p>").text("current time");
-Hours.append(hoursElm);   
-}
-}
-
-
+console.log("today is: "+ formatedDate);
 
     
