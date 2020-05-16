@@ -1,10 +1,12 @@
+var todoInput = document.querySelector("#currentHour");
+var time = $("#buisnessHours");
 var today = new Date();
 var day = today.getDay();
 var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
 console.log("today is: " + daylist[day]);
 var hour = today.getHours();
 
-
+buisnessHours();
 // creats the minutes with a leading 0
 function minutesWithZeros(minutes) 
 { 
@@ -48,17 +50,22 @@ var currentDay = date();
 var cdElm = $("<p>").text("today is: " + currentDay);
 dates.append(cdElm);
 
-function buisnessHours(){
 
-var Hours = $("#currentHour").addClass("present");
-var hoursElm = $("<p>").text("current time");
-Hours.append(hoursElm);
+
+function buisnessHours(){
+if(time !== currentDay && time < currentDay){
 var Hours = $("#currentHour").addClass("past");
 var hoursElm = $("<p>").text("current time");
 Hours.append(hoursElm);
+}else if (time !== currentDay && time > currentDay ){
 var Hours = $("#currentHour").addClass("future");
 var hoursElm = $("<p>").text("current time");
 Hours.append(hoursElm);
+}else{
+var Hours = $("#currentHour").addClass("present");
+var hoursElm = $("<p>").text("current time");
+Hours.append(hoursElm);   
+}
 }
 
 
