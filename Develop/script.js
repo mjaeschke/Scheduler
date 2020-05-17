@@ -57,16 +57,16 @@ savBtnNew.addEventListener("submit", function(event) {
 
   var todoText = todoInput.value.trim();
 
-  // Return from function early if submitted todoText is blank
+ 
   if (todoText === "") {
     return;
   }
 
-  // Add new todoText to todos array, clear the input
+  
   todos.push(todoText);
   todoInput.value = "";
 
-  // Store updated todos in localStorage, re-render the list
+ 
   storeTodos();
   
 });
