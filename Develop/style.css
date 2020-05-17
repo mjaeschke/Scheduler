@@ -28,9 +28,8 @@ textarea{
   white-space: pre-wrap;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  
+  padding: 20px;
+ 
 
 }
 
@@ -50,8 +49,7 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-  float: right;
-  padding: 20px;
+  padding: 16px
 
 }
 
@@ -76,10 +74,7 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
-  padding: 20px;
-  
- 
-  
+  padding: 21.9px
 }
 
 .saveBtn:hover {
