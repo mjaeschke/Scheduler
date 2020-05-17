@@ -7,6 +7,7 @@ dates.append(cdElm);
 var currentHour =  moment().format("h:mm a");
 console.log("the current hour is: "+ currentHour);
 
+var todos = [];
   
 var workHours = [
   "9am",
@@ -43,3 +44,29 @@ for (var i = 0; i < workHours.length; i++) {
     descriptionDiv.append(descriptionNew).addClass("future");
   }
 }
+
+function storeTodos() {
+
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+storeTodos();
+
+
+savBtnNew.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var todoText = todoInput.value.trim();
+
+  // Return from function early if submitted todoText is blank
+  if (todoText === "") {
+    return;
+  }
+
+  // Add new todoText to todos array, clear the input
+  todos.push(todoText);
+  todoInput.value = "";
+
+  // Store updated todos in localStorage, re-render the list
+  storeTodos();
+  
+});
